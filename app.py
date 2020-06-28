@@ -1,12 +1,14 @@
 from selenium import webdriver
 import csv
 
-DRIVER_PATH = r'A:\Mohamed\Downloads(HDD)\chromedriver_win32\chromedriver.exe'
-driver = webdriver.Chrome(executable_path=DRIVER_PATH)
-
+# Be sure to have chrome installed as well as the chrome driver with the same version
+DRIVER_PATH = r'PATH_TO_CHROME_DRIVER'
 URL = 'https://www.algoexpert.io/questions'
 
+
+driver = webdriver.Chrome(executable_path=DRIVER_PATH)
 driver.get(URL)
+
 question_columns = driver.find_elements_by_class_name("QuestionPage-questionsColumnContainer")
 
 questions = []
